@@ -5,32 +5,28 @@ to estado_inicial
   ;Block
   ask patch 0 0[set pcolor black]
   ask patch 0 1[set pcolor black]
-  ask patch 1 0[set pcolor black]
-  ask patch 1 1[set pcolor black]
-  ;Figura 1
-  ask patch -3 2[set pcolor black]
-  ask patch -2 2[set pcolor black]
+  ask patch 0 -1[set pcolor black]
+  ask patch 0 -2[set pcolor black]
+
+
+  ask patch -1 0[set pcolor black]
+  ask patch -1 1[set pcolor black]
   ask patch -1 2[set pcolor black]
-  ask patch -1 3[set pcolor black]
-  ask patch -1 4[set pcolor black]
-  ask patch -1 5[set pcolor black]
-  ask patch -2 5[set pcolor black]
-  ask patch -3 5[set pcolor black]
-  ask patch -3 4[set pcolor black]
-  ask patch -3 3[set pcolor black]
-  ;Figura 2
-  ask patch 3 3[set pcolor black]
-  ask patch 4 3[set pcolor black]
-  ask patch 4 5[set pcolor black]
-  ask patch 5 3[set pcolor black]
-  ask patch 5 4[set pcolor black]
-  ;Toad
-  ask patch -4 -4[set pcolor black]
-  ask patch -3 -4[set pcolor black]
-  ask patch -2 -4[set pcolor black]
-  ask patch -3 -3[set pcolor black]
-  ask patch -2 -3[set pcolor black]
-  ask patch -1 -3[set pcolor black]
+
+
+  ask patch -3 0[set pcolor black]
+  ask patch -3 -1[set pcolor black]
+
+
+  ask patch -2 -1[set pcolor black]
+  ask patch -2 -2[set pcolor black]
+
+  ask patch 1 2[set pcolor black]
+  ask patch 2 2[set pcolor black]
+  ask patch 2 1[set pcolor black]
+  ask patch 2 0[set pcolor black]
+
+
 end
 
 to iniciar
@@ -46,10 +42,8 @@ end
 
 to limpiar
   ifelse encendido [
-    ask patches[
-      estado_inicial
-
-    ]
+    ;set cantidad 0
+    estado_inicial
   ]
   [
     user-message(word "¡¡¡Debe encender la simulación!!!")
@@ -77,17 +71,16 @@ to correr
 
     ]
   ]
-  ask patches [set pcolor celula]
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
-10
-647
-448
+275
+49
+624
+399
 -1
 -1
-13.0
+37.9
 1
 10
 1
@@ -97,10 +90,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--16
-16
--16
-16
+-4
+4
+-4
+4
 0
 0
 1
@@ -147,7 +140,7 @@ INPUTBOX
 876
 284
 cantidad
-0.0
+5.0
 1
 0
 Number
@@ -171,7 +164,7 @@ cantidad
 cantidad
 1
 10000
-0.0
+5.0
 10
 1
 NIL
